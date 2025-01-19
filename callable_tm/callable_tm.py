@@ -7,10 +7,11 @@ import threading
 
 __all__ = [
     "TransactionalCallableDataManager",
-    "transactional_callable",
+    "callable_tm",
 ]
 
 _thread_data = threading.local()
+
 
 def _remove_tx_callable_manager(*args):
     try:
@@ -22,7 +23,9 @@ def _remove_tx_callable_manager(*args):
 def _get_tx_callable_manager():
     tx_callable_manager = getattr(_thread_data, "tx_callable_manager", None)
     if tx_callable_manager is None:
-        tx_callable_manager = _thread_data.tx_callable_manager = TransactionalCallableDataManager()
+        tx_callable_manager = _thread_data.tx_callable_manager = (
+            TransactionalCallableDataManager()
+        )
 
     tx = transaction.get()
     tx.join(tx_callable_manager)
@@ -62,7 +65,6 @@ class TransactionalCallableDataManager(object):
         pass
 
     def tpc_finish(self, _transaction):
-
         while self.queued_callables:
             callable_instance, args, kwargs = self.queued_callables.pop(0)
             callable_instance(*args, **kwargs)
@@ -76,7 +78,9 @@ class TransactionalCallableDataManager(object):
 
     abort = tpc_abort
 
-def transactional_callable(call: Callable):
+
+def callable_tm(call: Callable):
     def __inner_callable(*args, **kwargs):
         _get_tx_callable_manager().append((call, args, kwargs))
+
     return __inner_callable

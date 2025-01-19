@@ -7,3 +7,9 @@ requires-python = ">=3.8.5"
 dependencies = [
     "transaction>=5.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "ruff>=0.9.2",
+]
