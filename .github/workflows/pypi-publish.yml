@@ -7,8 +7,12 @@
 # documentation.
 
 name: Upload Python Package
+run-name: upload callable_tm
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
