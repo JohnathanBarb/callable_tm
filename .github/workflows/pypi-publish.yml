@@ -12,7 +12,9 @@ run-name: upload callable_tm
 on:
   push:
     branches:
-      - main
+      - release/*
+
+# TODO: update the cicd and do publish only on release
 
 permissions:
   contents: read
