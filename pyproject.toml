@@ -1,15 +1,20 @@
 [project]
 name = "callable-tm"
 version = "0.1.0"
-description = "Add your description here"
+description = ""
+authors = [
+    {name = "Johnathan Barbosa",email = "jbarbosa0504@gmail.com"}
+]
 readme = "README.md"
-requires-python = ">=3.8.5"
+requires-python = ">=3.12"
 dependencies = [
-    "transaction>=5.0",
+    "transaction (>=5.0,<6.0)"
 ]
 
-[dependency-groups]
-dev = [
-    "pytest>=8.3.4",
-    "ruff>=0.9.2",
-]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"

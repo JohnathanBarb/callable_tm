@@ -1,13 +1,13 @@
 test:
-	uv run --all-groups pytest -s
+	poetry run pytest -s
 
 tests: test
 
 lint:
-	uv run --all-groups ruff check
+	ruff check
 
 force-lint:
-	uv run --all-groups ruff check --fix
+	ruff check --fix
 
 format:
-	uv run --all-groups ruff format
+	ruff format

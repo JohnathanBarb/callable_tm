@@ -35,8 +35,6 @@ def _get_tx_callable_manager():
 
 @implementer(IDataManager)
 class TransactionalCallableDataManager(object):
-    transaction_manager = None
-
     def __init__(self):
         # TODO: collections.Dequeue
         # Queue vs Dequeue vs List
