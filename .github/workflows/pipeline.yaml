@@ -22,3 +22,8 @@ jobs:
       
       - name: Run tests
         run: make test
+
+      - name: Add cov to codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
