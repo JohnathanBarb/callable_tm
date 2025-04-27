@@ -1,9 +1,9 @@
+import threading
 from typing import Callable
 
 import transaction
 from transaction.interfaces import IDataManager
 from zope.interface import implementer
-import threading
 
 __all__ = [
     "TransactionalCallableDataManager",

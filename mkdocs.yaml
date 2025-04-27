@@ -1,0 +1,7 @@
+site_name: CallableTM
+repo_url: https://github.com/JohnathanBarb/callable_tm
+repo_name: callable_tm
+edit_uri: tree/main/docs/
+
+theme:
+  name: material

@@ -1,7 +1,10 @@
 test:
-	poetry run pytest -s
+	poetry run pytest -s -vv --cov=callable_tm
 
 tests: test
+
+isort:
+	poetry run isort .
 
 lint:
 	ruff check
@@ -11,3 +14,6 @@ force-lint:
 
 format:
 	ruff format
+
+docs:
+	poetry run mkdocs serve
