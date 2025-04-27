@@ -44,9 +44,6 @@ class TransactionalCallableDataManager(object):
     def __cleanup(self):
         self.queued_callables = []
 
-    def __discard_functions(self):
-        self.__cleanup()
-
     def append(self, func):
         self.queued_callables.append(func)
 
