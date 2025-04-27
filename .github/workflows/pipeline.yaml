@@ -13,3 +13,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.12'
+
+      - name: Install poetry
+        run: pip install poetry
+
+      - name: Install dependencies
+        run: poetry install --without docs
+      
+      - name: Run tests
+        run: make test
