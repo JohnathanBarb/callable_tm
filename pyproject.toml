@@ -1,6 +1,6 @@
 [project]
 name = "callable-tm"
-version = "0.1.0"
+version = "0.2.0"
 description = "package that allows to implement functions that can join on current transaction"
 authors = [
     {name = "Johnathan Barbosa",email = "jbarbosa0504@gmail.com"}
