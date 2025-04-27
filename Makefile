@@ -3,6 +3,9 @@ test:
 
 tests: test
 
+test-coverage:
+	poetry run pytest -s -vv --cov=callable_tm --cov-report=xml
+
 isort:
 	poetry run isort .
 

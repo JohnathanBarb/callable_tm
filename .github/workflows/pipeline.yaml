@@ -21,7 +21,7 @@ jobs:
         run: poetry install --without docs
 
       - name: Run tests
-        run: poetry run pytest --cov --cov-branch --cov-report=xml
+        run: make test-coverage
 
       - name: Add coverage to codecov
         uses: codecov/codecov-action@v5
