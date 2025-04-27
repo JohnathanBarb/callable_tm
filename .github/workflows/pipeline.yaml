@@ -18,7 +18,7 @@ jobs:
         run: pip install poetry
 
       - name: Install dependencies
-        run: poetry install --without docs
+        run: poetry install
 
       - name: Run tests
         run: make test-coverage
